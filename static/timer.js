@@ -2,7 +2,7 @@ function Boss(id, card) {
     this.ID = id;
     this.name = bossNames[0];
 
-    this.startTime = 35;//respawnTimes[0];
+    this.startTime = respawnTimes[0];
     this.time = this.startTime;
 
     this.enabled = false;
