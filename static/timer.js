@@ -31,7 +31,7 @@ function Boss(id, card) {
                 this.reset();
             }
             if (this.time === 30) {
-                // TODO: notifications
+                this.notify();
             }
         }
     };
@@ -52,7 +52,9 @@ function Boss(id, card) {
     };
 
     this.notify = function () {
-
+        if(allowNotifiaiotns){
+            let notification = new Notification(this.name + " CH" + (this.ID+1) + " za 30 sekund!");
+        }
     }
 
 
