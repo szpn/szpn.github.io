@@ -1,4 +1,10 @@
-
+.ts3{
+    width: 60%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .timer{
     color: #FF0000;
@@ -6,4 +12,4 @@
 
 .card-group{
     margin: 5px;
-}
+}m
