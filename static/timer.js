@@ -28,7 +28,7 @@ function Boss(id, card) {
                 this.time--;
                 this.timerSpan.text(this.convert());
             } else {
-                this.reset();
+                this.time = this.startTime;
             }
             if (this.time === 30) {
                 this.notify();
