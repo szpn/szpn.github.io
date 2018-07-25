@@ -102,6 +102,12 @@ $("#bossControl").change(function () {
     }
 });
 
+$(".btnresetall").click(function () {
+    for (let i = 0; i < bossList.length; i++) {
+        bossList[i].reset();
+    }
+});
+
 
 if (Notification.permission !== "denied" && Notification.permission !== "granted") {
     Notification.requestPermission(function (permission) {
@@ -121,15 +127,13 @@ function tick() {
 
 }
 
-window.onbeforeunload = function(){
-  for(let i = 0; i < bossList.length; i++){
-      if(bossList[i].enabled === true){
-          return 1
-      }
-  }
+window.onbeforeunload = function () {
+    for (let i = 0; i < bossList.length; i++) {
+        if (bossList[i].enabled === true) {
+            return 1
+        }
+    }
 };
-
-
 
 
 setInterval(tick, 1000);
