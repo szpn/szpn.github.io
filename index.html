@@ -39,17 +39,24 @@
 <main role="main" class="container">
     <div class="col-xl timery">
         <label for="sel1">Wybierz bossa/metina: </label>
-        <select class="form-control" id="bossControl">
-            <option>Mylfid</option>
-            <option>Olimpus</option>
-            <option>Veryhtus</option>
-            <option>Temani</option>
-            <option disabled>--- METINY ---</option>
-            <option>Magiczny Metin</option>
-            <option>Metin Lodu</option>
-            <option>Metin Spustoszenia</option>
-            <option>Metin Asherod</option>
-        </select>
+        <div class="row">
+            <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                <select class="form-control" id="bossControl">
+                    <option>Mylfid</option>
+                    <option>Olimpus</option>
+                    <option>Veryhtus</option>
+                    <option>Temani</option>
+                    <option disabled>--- METINY ---</option>
+                    <option>Magiczny Metin</option>
+                    <option>Metin Lodu</option>
+                    <option>Metin Spustoszenia</option>
+                    <option>Metin Asherod</option>
+                </select>
+            </div>
+            <div class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <button class="btn btn-danger float-right btnresetall" style="width:100%">Zresetuj wszystko</button>
+            </div>
+        </div>
         <div class="card-group">
             <div class="card">
                 <div class="card-body boss">
