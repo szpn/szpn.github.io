@@ -47,21 +47,20 @@ function Boss(id, card) {
         if (mins < 10) {
             mins = "0" + mins;
         }
-
         if (secs < 10) {
             secs = "0" + secs;
         }
-
         return mins + ":" + secs
     };
 
     this.notify = function () {
         if (allowNotifiaiotns) {
-            let notification = new Notification(this.name + " CH" + (this.ID + 1) + " za 30 sekund!");
+            let options = {
+                icon: 'static/boss_images/' + this.name + ".png"
+            };
+            let notification = new Notification(this.name + " CH" + (this.ID + 1) + " za 30 sekund!", options);
         }
     }
-
-
 }
 
 let bossList = [];
@@ -69,6 +68,7 @@ let toggleButtons = [];
 let resetButtons = [];
 let respawnTimes = [7 * 60 + 30, 12 * 60 + 30, 26 * 60 + 30, 46 * 60 + 30, undefined, 10 * 60, 20 * 60, 30 * 60, 49 * 60 + 30];
 let bossNames = ["Mylfid", "Olimpus", "Veryhtus", "Temani", undefined, "Magiczny Metin", "Metin Lodu", "Metin Spustoszenia", "Metin Asherod"];
+//let bossImages = [];
 let allowNotifiaiotns = false;
 
 for (let i = 0; i < $(".boss").length; i++) {
@@ -119,6 +119,16 @@ function tick() {
     }
 
 }
+
+window.onbeforeunload = function(){
+  for(let i = 0; i < bossList.length; i++){
+      if(bossList[i].enabled === true){
+          return 1
+      }
+  }
+};
+
+
 
 
 setInterval(tick, 1000);
