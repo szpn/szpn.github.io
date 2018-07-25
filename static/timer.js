@@ -1,6 +1,7 @@
 function Boss(id, card) {
     this.ID = id;
     this.name = bossNames[0];
+    this.color = 100;
 
     this.startTime = respawnTimes[0];
     this.time = this.startTime;
@@ -24,9 +25,13 @@ function Boss(id, card) {
 
     this.run = function () {
         if (this.enabled) {
+            this.color = (this.time / this.startTime) * 100;
             if (this.time > 0) {
                 this.time--;
                 this.timerSpan.text(this.convert());
+                let hsltext = "hsl(" + this.color + ",50%,50%)";
+                console.log(hsltext);
+                this.timerSpan.css("color", hsltext)
             } else {
                 this.time = this.startTime;
             }
@@ -52,8 +57,8 @@ function Boss(id, card) {
     };
 
     this.notify = function () {
-        if(allowNotifiaiotns){
-            let notification = new Notification(this.name + " CH" + (this.ID+1) + " za 30 sekund!");
+        if (allowNotifiaiotns) {
+            let notification = new Notification(this.name + " CH" + (this.ID + 1) + " za 30 sekund!");
         }
     }
 
