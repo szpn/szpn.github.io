@@ -30,7 +30,6 @@ function Boss(id, card) {
                 this.time--;
                 this.timerSpan.text(this.convert());
                 let hsltext = "hsl(" + this.color + ",50%,50%)";
-                console.log(hsltext);
                 this.timerSpan.css("color", hsltext)
             } else {
                 this.time = this.startTime;
