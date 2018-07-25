@@ -59,6 +59,8 @@ function Boss(id, card) {
                 icon: 'static/boss_images/' + this.name + ".png"
             };
             let notification = new Notification(this.name + " CH" + (this.ID + 1) + " za 30 sekund!", options);
+            let audio = new Audio("static/notification.mp3");
+            audio.play();
         }
     }
 }
