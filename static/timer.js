@@ -14,10 +14,6 @@ function Boss(id, card) {
 
     this.toggle = function () {
         this.enabled = !this.enabled;
-        if(this.enabled){
-            let dimensionValue = this.name + " " + (this.ID+1);
-            ga('set', 'dimension1', dimensionValue);
-        }
     };
 
     this.reset = function () {
