@@ -99,6 +99,7 @@ $("#bossControl").change(function () {
         bossList[i].startTime = respawnTimes[this.selectedIndex];
         bossList[i].name = bossNames[this.selectedIndex];
         bossList[i].reset();
+        $(".map").attr("src", "static/maps/" + bossNames[this.selectedIndex] + ".png")
     }
 });
 
@@ -107,6 +108,12 @@ $(".btnresetall").click(function () {
         bossList[i].reset();
     }
 });
+
+$(".btnmap").click(function () {
+    console.log('iza sosna');
+    $(".map").slideToggle(230);
+});
+
 
 
 if (Notification.permission !== "denied" && Notification.permission !== "granted") {

@@ -12,4 +12,9 @@
 
 .card-group{
     margin: 5px;
-}m
+}
+
+.map{
+    display:none;
+    margin-top: 10px;
+}
